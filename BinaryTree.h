@@ -106,6 +106,7 @@ public:
 	short leftmost() const;
 
 	std::vector< short > preorder() const;
+	std::vector< short > postorder() const;
 
 
 private:
@@ -288,6 +289,13 @@ BinaryTree::preorder() const
 	preorder(traversal, tree_);
 	return traversal;
 }
+std::vector< short >
+BinaryTree::postorder() const
+{
+	std::vector< short > traversal;
+	postorder(traversal, tree_);
+	return traversal;
+}
 
 
 // code for helper functions
@@ -430,6 +438,7 @@ short
 BinaryTree::leftmost(const BinaryNode * subtree)
 {
 
+	return 0;
 
 }
 
@@ -452,9 +461,10 @@ BinaryTree::postorder(std::vector< short > & traversal,
 {
 	if (subtree != NULL)
 	{
-		traversal.push_back(subtree->entry_);
 		postorder(traversal, subtree->left_);
 		postorder(traversal, subtree->right_);
+		traversal.push_back(subtree->entry_);
+
 	}
 }
 
