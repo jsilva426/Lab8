@@ -1,5 +1,8 @@
 #pragma once
 // BinaryTree.h
+//Modified by jacob silva
+//Lab8
+//12.3.2018
 
 // A binary tree class using an embedded class for the nodes.
 // All code is implemented here in the .h file.
@@ -438,8 +441,16 @@ short
 BinaryTree::leftmost(const BinaryNode * subtree)
 {
 
-	return 0;
-
+	short left = 0;
+	if (subtree->left_ == NULL)
+	{
+		left = subtree->entry_;
+	}
+	else
+	{
+		left = leftmost(subtree->left_);
+	}
+	return left;
 }
 
 
@@ -469,4 +480,3 @@ BinaryTree::postorder(std::vector< short > & traversal,
 }
 
 #endif
-
