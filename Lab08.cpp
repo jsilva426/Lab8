@@ -1,5 +1,7 @@
 // Lab08.cpp : Defines the entry point for the console application.
-//
+//Jacob Silva
+//12.3.2018
+// COSC Lab8
 
 #include "stdafx.h"
 // BinaryTreeDriver.cpp
